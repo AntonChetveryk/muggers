@@ -1,4 +1,4 @@
-import { PERSONS_FETCH_DATA_SUCCESS } from "../actions/persons";
+import { PERSONS_FETCH_DATA_SUCCESS, ADD_MUGGER } from "../actions/persons";
 
 const initialState = {
   persons: [],
@@ -7,8 +7,8 @@ const initialState = {
 const persons = (state = initialState, action) => {
   switch (action.type) {
     case PERSONS_FETCH_DATA_SUCCESS:
-      console.log("Fetch");
-      console.log(action.persons);
+      return { persons: action.persons };
+    case ADD_MUGGER:
       return state;
     default:
       return state;
